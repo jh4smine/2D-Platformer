@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ccox4pf6fyycg"]
+
+[ext_resource type="Script" uid="uid://djwm8ngbsfjtt" path="res://scripts/enemy_2.gd" id="1_3neu4"]
+[ext_resource type="Texture2D" uid="uid://c73x8a30kppvn" path="res://assets/characters/enemies/6 - Robo Totem/Walking (16 x 16).png" id="2_3neu4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3neu4"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhmjl"]
+atlas = ExtResource("2_3neu4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3neu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhmjl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtglo"]
+size = Vector2(12.5, 14)
+
+[node name="Robo" type="Area2D" unique_id=54505770]
+script = ExtResource("1_3neu4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=290920932]
+texture_filter = 1
+position = Vector2(-3.4999995, -2.2499995)
+scale = Vector2(1.4375, 1.34375)
+sprite_frames = SubResource("SpriteFrames_u0ya7")
+autoplay = "default"
+frame_progress = 0.7255415
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1661001066]
+position = Vector2(-3.25, -1)
+shape = SubResource("RectangleShape2D_dtglo")
+
+[node name="Timer" type="Timer" parent="." unique_id=1689820397]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

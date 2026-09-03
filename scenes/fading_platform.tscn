@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dgw6cdxsxstk"]
+
+[ext_resource type="Script" uid="uid://cnxphbakvxfh" path="res://scripts/fading_platform.gd" id="1_y0oj4"]
+[ext_resource type="Texture2D" uid="uid://cxxre3b0esclc" path="res://assets/Blocks/3 - Tropics/Terrain (16 x 16).png" id="2_2yl8x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtglo"]
+size = Vector2(12, 2)
+
+[node name="FadingPlatform" type="StaticBody2D" unique_id=165645164]
+collision_layer = 2048
+script = ExtResource("1_y0oj4")
+
+[node name="VanishingTimer" type="Timer" parent="." unique_id=801954526]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=48811675]
+texture = ExtResource("2_2yl8x")
+region_enabled = true
+region_rect = Rect2(239.9586, 48.03825, 15.799866, 14.088158)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=585917174]
+shape = SubResource("RectangleShape2D_u0ya7")
+
+[node name="TriggerArea" type="Area2D" parent="." unique_id=1087672735]
+collision_layer = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=1075520592]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_dtglo")
+
+[connection signal="timeout" from="VanishingTimer" to="." method="_on_vanishing_timer_timeout"]
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]

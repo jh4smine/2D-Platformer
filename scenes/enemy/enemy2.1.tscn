@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://5x55f3qwtq1b"]
+
+[ext_resource type="Script" uid="uid://bbrx1xmi5momj" path="res://scripts/enemy_2.1.gd" id="1_at0lp"]
+[ext_resource type="Texture2D" uid="uid://cdmbb254wmcyj" path="res://assets/characters/enemies/8 - Chi Chi the Bird/Aerial_Attack (16 x 16).png" id="2_at0lp"]
+[ext_resource type="Texture2D" uid="uid://bg3j7613yb6jm" path="res://assets/characters/enemies/8 - Chi Chi the Bird/Flapping_Wings (16 x 16).png" id="2_vlggd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at0lp"]
+atlas = ExtResource("2_vlggd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf82u"]
+atlas = ExtResource("2_vlggd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iwfk"]
+atlas = ExtResource("2_vlggd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3h5o"]
+atlas = ExtResource("2_at0lp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at0lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf82u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iwfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3h5o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nb0t0"]
+radius = 8.25
+
+[node name="Robo" type="Area2D" unique_id=54505770]
+script = ExtResource("1_at0lp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=290920932]
+texture_filter = 1
+position = Vector2(-3.4999995, -2.2499995)
+scale = Vector2(1.4375, 1.34375)
+sprite_frames = SubResource("SpriteFrames_u0ya7")
+autoplay = "default"
+frame_progress = 0.62694347
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1661001066]
+position = Vector2(-4, -2)
+shape = SubResource("CircleShape2D_nb0t0")
+
+[node name="Timer" type="Timer" parent="." unique_id=1689820397]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

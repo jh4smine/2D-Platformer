@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b03ni0ifsv8jd"]
+
+[ext_resource type="Texture2D" uid="uid://cxxre3b0esclc" path="res://assets/Blocks/3 - Tropics/Terrain (16 x 16).png" id="1_1qyh0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(15, 13)
+
+[node name="Platform3_1" type="AnimatableBody2D" unique_id=920081477]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=202298807]
+position = Vector2(1.9073486e-06, 3.8146973e-06)
+scale = Vector2(1.0110294, 1.0125)
+texture = ExtResource("1_1qyh0")
+region_enabled = true
+region_rect = Rect2(240.18236, 47.309425, 15.536545, 16.589867)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1400549110]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_u0ya7")

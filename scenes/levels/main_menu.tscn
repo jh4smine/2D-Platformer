@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://doj6v3jchento"]
+
+[ext_resource type="Script" uid="uid://uev3wfudjgjw" path="res://scripts/main_menu.gd" id="1_geflf"]
+[ext_resource type="Texture2D" uid="uid://rbl42vxhfh4d" path="res://assets/maps/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png" id="2_fkd6t"]
+[ext_resource type="FontFile" uid="uid://dal8og4ks40ko" path="res://assets/Fonts/at01.ttf" id="3_keln3"]
+[ext_resource type="FontFile" uid="uid://b8pce68bl45cy" path="res://assets/Fonts/Pixelmania.ttf" id="4_crctu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0ya7"]
+texture = ExtResource("2_fkd6t")
+modulate_color = Color(0.91667897, 0.9147036, 0.92988664, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtglo"]
+bg_color = Color(0.40803286, 0.82655096, 0.75713545, 0.68235296)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0.53607786, 0.5630538, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+bg_color = Color(0.15519094, 0.4083829, 0.36818385, 0.68235296)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0.53607786, 0.5630538, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(0.29407474, 0.6820223, 0.61972487, 0.68235296)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0.53607786, 0.5630538, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+
+[node name="MainMenu" type="Control" unique_id=2119717887]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_geflf")
+
+[node name="Panel" type="Panel" parent="." unique_id=1725048789]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_u0ya7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1865559978]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -28.0
+offset_right = 146.875
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1335836969]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.9902999, 0.9272534, 0.91635996, 1)
+theme_override_fonts/font = ExtResource("3_keln3")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_dtglo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2008973133]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.31344384, 0.3207785, 0.21278784, 1)
+theme_override_fonts/font = ExtResource("3_keln3")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_dtglo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Options
+"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1825171636]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+theme_override_fonts/font = ExtResource("3_keln3")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_dtglo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Exit
+"
+
+[node name="Label" type="Label" parent="." unique_id=583469898]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -184.0
+offset_right = 378.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.98039216)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_crctu")
+theme_override_font_sizes/font_size = 45
+text = "POCKET MOCHI"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=482195616]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2137157120]
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1978854061]
+position = Vector2(585.00006, 336.25)
+scale = Vector2(4.0347223, 3.2572114)
+texture = ExtResource("2_fkd6t")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

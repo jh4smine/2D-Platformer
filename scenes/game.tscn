@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://elst0xn32iil"]
+
+[ext_resource type="PackedScene" uid="uid://bxrlp0wl7aler" path="res://scenes/levels/level_1.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://dhypv77lbuimo" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="FontFile" uid="uid://dal8og4ks40ko" path="res://assets/Fonts/at01.ttf" id="3_lnu2h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0ya7"]
+bg_color = Color(0.007843138, 0.6117647, 0.69803923, 0.3137255)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.019607844, 0.5882353, 0.7176471, 1)
+corner_detail = 1
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
+bg_color = Color(0.70427686, 0.9543448, 0.9991252, 0.3882353)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(5.7756904e-07, 0.87677526, 0.9739825, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Game" type="Node2D" unique_id=1551134625]
+script = ExtResource("1_yqjtg")
+
+[node name="Level1" parent="." unique_id=1965309762 instance=ExtResource("1_uwrxv")]
+position = Vector2(-36, 3)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1822323034]
+
+[node name="ScorePanel" type="Panel" parent="HUD" unique_id=823885461]
+anchors_preset = -1
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 201.0
+offset_bottom = 68.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u0ya7")
+
+[node name="ScoreLabel" type="Label" parent="HUD/ScorePanel" unique_id=748755770]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 7.0
+offset_right = 66.0
+offset_bottom = 44.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_lnu2h")
+theme_override_font_sizes/font_size = 40
+text = "SCORE: 0"
+
+[node name="WarningLabel" type="Label" parent="HUD" unique_id=1116852010]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -85.0
+offset_right = 125.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lnu2h")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lnu2h")
+text = "Need X more points!"
+
+[node name="Fade" type="ColorRect" parent="HUD" unique_id=1321729993]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

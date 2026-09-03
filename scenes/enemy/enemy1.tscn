@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dvgxirvvr4t18"]
+
+[ext_resource type="Script" uid="uid://b8ocmuvawi47x" path="res://scripts/enemy_1.gd" id="1_ppmo8"]
+[ext_resource type="Texture2D" uid="uid://eqja263m66uc" path="res://assets/characters/enemies/11 - Spikey Bub/Running (16 x 16).png" id="2_nb0t0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n665k"]
+atlas = ExtResource("2_nb0t0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lowyn"]
+atlas = ExtResource("2_nb0t0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iolyx"]
+atlas = ExtResource("2_nb0t0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncnv8"]
+atlas = ExtResource("2_nb0t0")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye30t"]
+atlas = ExtResource("2_nb0t0")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f6wx"]
+atlas = ExtResource("2_nb0t0")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n665k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lowyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iolyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncnv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye30t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f6wx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtglo"]
+size = Vector2(12.5, 14)
+
+[node name="Daikon" type="Area2D" unique_id=54505770]
+script = ExtResource("1_ppmo8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=290920932]
+texture_filter = 1
+position = Vector2(-3.4999995, -2.2499995)
+scale = Vector2(1.4375, 1.34375)
+sprite_frames = SubResource("SpriteFrames_u0ya7")
+autoplay = "default"
+frame_progress = 0.7729148
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1661001066]
+position = Vector2(-3.25, -1)
+shape = SubResource("RectangleShape2D_dtglo")
+
+[node name="Timer" type="Timer" parent="." unique_id=1689820397]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

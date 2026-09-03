@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b4nm3hs4nissi"]
+
+[ext_resource type="Texture2D" uid="uid://6odxgrybdhn5" path="res://assets/maps/2 - Autumn Forest/Terrain (16 x 16).png" id="1_g8307"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(57, 12)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=741833917]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=926167020]
+position = Vector2(9.5, -0.5)
+scale = Vector2(1.25, 1.0714285)
+texture = ExtResource("1_g8307")
+region_enabled = true
+region_rect = Rect2(47.646988, 13.571129, 52.266983, 14.366596)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=189955077]
+position = Vector2(7.5, 1)
+shape = SubResource("RectangleShape2D_u0ya7")
+one_way_collision = true

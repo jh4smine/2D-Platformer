@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cbf36hjnq580r"]
+
+[ext_resource type="Script" uid="uid://bjo3k6rg4eoo6" path="res://scripts/enemy_3.gd" id="1_ncs5y"]
+[ext_resource type="Texture2D" uid="uid://cptgp50lxnkej" path="res://assets/characters/enemies/9 - Diver the Fish/Swimming (16 x 16).png" id="2_ncs5y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ednf7"]
+atlas = ExtResource("2_ncs5y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8twg"]
+atlas = ExtResource("2_ncs5y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5waa"]
+atlas = ExtResource("2_ncs5y")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82h2u"]
+atlas = ExtResource("2_ncs5y")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ednf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8twg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5waa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82h2u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtglo"]
+size = Vector2(12, 8)
+
+[node name="Robo" type="Area2D" unique_id=54505770]
+script = ExtResource("1_ncs5y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=290920932]
+texture_filter = 1
+position = Vector2(-3.4999995, -2.2499995)
+scale = Vector2(1.4375, 1.34375)
+sprite_frames = SubResource("SpriteFrames_u0ya7")
+autoplay = "default"
+frame_progress = 0.34379783
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1661001066]
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_dtglo")
+
+[node name="Timer" type="Timer" parent="." unique_id=1689820397]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
