@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bxrlp0wl7aler" path="res://scenes/levels/level_1.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dhypv77lbuimo" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="FontFile" uid="uid://dal8og4ks40ko" path="res://assets/Fonts/at01.ttf" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://d38otsv8bucr1" path="res://scenes/heartcontainer.tscn" id="4_lbhrr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0ya7"]
 bg_color = Color(0.007843138, 0.6117647, 0.69803923, 0.3137255)
@@ -35,7 +34,6 @@ script = ExtResource("1_yqjtg")
 position = Vector2(-36, 3)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1822323034]
-layer = 10
 
 [node name="ScorePanel" type="Panel" parent="HUD" unique_id=823885461]
 anchors_preset = -1
@@ -77,19 +75,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_lnu2h")
 text = "Need X more points!"
 
 [node name="Fade" type="ColorRect" parent="HUD" unique_id=1321729993]
-z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=206536146]
-
-[node name="heartcontainer" parent="CanvasLayer" unique_id=2081620210 instance=ExtResource("4_lbhrr")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -344.0
-offset_right = 0.0
-grow_horizontal = 0

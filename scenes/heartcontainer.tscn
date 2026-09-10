@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d38otsv8bucr1"]
+
+[ext_resource type="PackedScene" uid="uid://bs6qdfefnsvcw" path="res://scenes/heart.tscn" id="1_oyvsj"]
+
+[node name="heartcontainer" type="HBoxContainer" unique_id=2081620210]
+offset_left = 1.0
+offset_right = 345.0
+offset_bottom = 50.0
+theme_override_constants/separation = -8
+alignment = 2
+
+[node name="Heart" parent="." unique_id=1523295366 instance=ExtResource("1_oyvsj")]
+layout_mode = 2
+
+[node name="Heart2" parent="." unique_id=1447089177 instance=ExtResource("1_oyvsj")]
+layout_mode = 2
+
+[node name="Heart3" parent="." unique_id=1886732 instance=ExtResource("1_oyvsj")]
+layout_mode = 2
+
+[node name="Heart4" parent="." unique_id=1039396878 instance=ExtResource("1_oyvsj")]
+layout_mode = 2
+
+[node name="Heart5" parent="." unique_id=1307144361 instance=ExtResource("1_oyvsj")]
+layout_mode = 2
+
+[node name="Heart6" parent="." unique_id=496522261 instance=ExtResource("1_oyvsj")]
+layout_mode = 2
+
+[node name="Heart7" parent="." unique_id=460476075 instance=ExtResource("1_oyvsj")]
+layout_mode = 2
+
+[node name="Heart8" parent="." unique_id=541123956 instance=ExtResource("1_oyvsj")]
+layout_mode = 2

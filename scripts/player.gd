@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -350.0
-const COYOTE_TIME = 0.15 
+const COYOTE_TIME = 0.15
 
 enum State { NORMAL, DYING, SPAWNING }
 var current_state: State = State.NORMAL
@@ -28,7 +28,7 @@ var alive: bool:
 	get:
 		return current_state == State.NORMAL
 
-var coyote_timer = 0.0 
+var coyote_timer = 0.0
 
 func _ready() -> void:
 	# Add jump and death audio nodes and load sound files
@@ -46,19 +46,19 @@ func _physics_process(delta: float) -> void:
 
 	# Handle coyote timer and gravity
 	if is_on_floor():
-		coyote_timer = COYOTE_TIME 
+		coyote_timer = COYOTE_TIME
 	else:
 		coyote_timer -= delta
 		velocity += get_gravity() * delta
 
-	# Jump logic + play audio
-	if Input.is_action_just_pressed("ui_accept") and coyote_timer > 0.0:
+	# Jump logic + play audio (Uses "w" key from Input Map)
+	if Input.is_action_just_pressed("w") and coyote_timer > 0.0:
 		velocity.y = JUMP_VELOCITY
 		coyote_timer = 0.0
 		jump_sfx.play()
 
-	# Horizontal movement
-	var direction := Input.get_axis("ui_left", "ui_right")
+	# Horizontal movement (Uses "a" for left, "d" for right)
+	var direction := Input.get_axis("a", "d")
 	if direction != 0:
 		velocity.x = direction * SPEED
 		animated_sprite.flip_h = (direction < 0)

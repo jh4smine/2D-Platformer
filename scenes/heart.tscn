@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bs6qdfefnsvcw"]
+
+[ext_resource type="Texture2D" uid="uid://cxhvvafmcunf5" path="res://assets/maps/Heart_Spin (16 x 16).png" id="1_cixvg"]
+
+[node name="Heart" type="Panel" unique_id=1523295366]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=859754504]
+position = Vector2(-11, -28)
+scale = Vector2(4.666667, 4.3125005)
+texture = ExtResource("1_cixvg")
+centered = false
+hframes = 5
