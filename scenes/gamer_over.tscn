@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://cbaf36kc2jqkd"]
+
+[ext_resource type="Script" uid="uid://bsshlkg0kcgp6" path="res://scripts/gamer_over.gd" id="1_egodd"]
+[ext_resource type="FontFile" uid="uid://dal8og4ks40ko" path="res://assets/Fonts/at01.ttf" id="2_q1w2y"]
+[ext_resource type="AudioStream" uid="uid://bhlblvenkj8xx" path="res://assets/Sounds/Failure.wav" id="3_q1w2y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u0ya7"]
+font_size = 138
+
+[sub_resource type="Theme" id="Theme_u0ya7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yex4w"]
+bg_color = Color(0.497513, 0.7630686, 0.58478737, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.23529412, 0.5568628, 0.26666668, 0.42352942)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
+shadow_color = Color(0.0492324, 0.25729343, 0.17018324, 0.6)
+shadow_size = 2
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr0sy"]
+bg_color = Color(0.0618921, 0.20163196, 0.11400997, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fejpm"]
+bg_color = Color(0.16078432, 0.33333334, 0.17254902, 0.83137256)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksmjt"]
+bg_color = Color(0.039215688, 0.101960786, 0.039215688, 0.85882354)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wyty"]
+bg_color = Color(0.19807622, 0.35302752, 0.14790326, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="GamerOver" type="Control" unique_id=144596790]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_egodd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1546808124]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -688.5
+offset_top = -423.5
+offset_right = 688.5
+offset_bottom = 423.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.22352941, 0.3647059, 0.31764707, 0.8666667)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=738213143]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.5
+offset_top = -66.5
+offset_right = 231.5
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_q1w2y")
+text = "Game Over!"
+label_settings = SubResource("LabelSettings_u0ya7")
+
+[node name="Button" type="Button" parent="." unique_id=621392227]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = 66.0
+offset_right = 198.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u0ya7")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_q1w2y")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_yex4w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sr0sy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fejpm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ksmjt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_3wyty")
+text = "Restart"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=291450090]
+stream = ExtResource("3_q1w2y")
+autoplay = true
